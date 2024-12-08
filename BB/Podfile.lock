@@ -1,0 +1,20 @@
+PODS:
+  - SnapKit (5.0.1)
+  - SwiftyJSON (5.0.1)
+
+DEPENDENCIES:
+  - SnapKit (~> 5.0.0)
+  - SwiftyJSON (= 5.0.1)
+
+SPEC REPOS:
+  trunk:
+    - SnapKit
+    - SwiftyJSON
+
+SPEC CHECKSUMS:
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
+
+PODFILE CHECKSUM: 5da29045d702773c91efddeb3384b1f89355a64d
+
+COCOAPODS: 1.15.2
