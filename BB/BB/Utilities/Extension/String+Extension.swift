@@ -173,3 +173,34 @@ extension String {
     }
 
 }
+
+// MARK: - LOCALIZED STRING
+ extension String {
+    func toLocalized() -> String {
+        return NSLocalizedString(self, comment: "")
+    }
+    
+     func localized() -> String {
+        if AppConstant.kLocalizedFromJson == false {
+            guard let path = Bundle.main.path(forResource: UserSettings.shared.language.key, ofType: "lproj") else { return self }
+            return Bundle(path: path)?.localizedString(forKey: self, value: nil, table: nil) ?? self
+        }
+                  
+         return AppLanguage.shared.getWordingForKey(self) ?? self
+    }
+         
+    func localizedFormat(_ arguments: CVarArg...) -> String {
+        let wording = localized()
+        let prepareString = wording.replacingOccurrences(of: "{$}%", with: "{$}") // avoid error when contains % character
+        let replaceString = prepareString.replacingOccurrences(of: "{$}", with: "%@")
+        return String(format: replaceString, arguments: arguments)
+    }
+     
+     func localizedFormatWithArray(_ arguments: [CVarArg]) -> String {
+         let wording = localized()
+         let prepareString = wording.replacingOccurrences(of: "{$}%", with: "{$}") // avoid error when contains % character
+         let replaceString = prepareString.replacingOccurrences(of: "{$}", with: "%@")
+         return String(format: replaceString, arguments: arguments)
+     }
+ }
+

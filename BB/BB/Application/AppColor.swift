@@ -93,6 +93,16 @@ extension AppColor {
         }
     }
     
+    static var themeColor: UIColor {
+        switch UserSettings.shared.theme {
+        case .orgran:
+            return AppColor.baseFireLight
+        case .blue:
+            return Self.colorFromString("104082")
+        }
+
+    }
+    
     static var baseBlack: UIColor = Self.colorFromString("000000")
     static var baseWhite: UIColor = Self.colorFromString("FFFFFF")
     // --------------------------

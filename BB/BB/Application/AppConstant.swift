@@ -8,6 +8,7 @@
 import Foundation
 
 struct AppConstant {
+    static let kLocalizedFromJson = true
     struct ConfigFileName {
         static let kLangVi = ""
         static let kLangEn = ""
@@ -16,4 +17,5 @@ struct AppConstant {
 
 extension Notification.Name {
     static let didUpdateTheme = Notification.Name("didUpdateTheme")
+    static let notifyCurrentLanguageChange = Notification.Name("notifyCurrentLanguageChange")
 }

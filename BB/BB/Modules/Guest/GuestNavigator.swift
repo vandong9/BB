@@ -11,7 +11,13 @@ class GuestNavigator {
 
 extension GuestNavigator {
     func start() {
-        let vc = LoginVC.instance()
+        let router = LoginVC.Router()
+        router.register = { [weak nav] in
+            guard let nav = nav else { return }
+            
+            RegisterNavigator(nav: nav).start()
+        }
+        let vc = LoginVC.instance(router: router)
         nav.pushViewController(vc, animated: true)
     }
 }

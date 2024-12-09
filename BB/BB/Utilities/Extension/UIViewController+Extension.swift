@@ -7,6 +7,10 @@ import UIKit
 extension UIViewController: BBExtensionCompatible {}
 
 extension UIViewController {
+    var className: String {
+        return NSStringFromClass(type(of: self))
+    }
+
     func addChildVC(childVC: UIViewController, inView: UIView) {
         self.addChild(childVC)
         childVC.view.bounds = inView.bounds

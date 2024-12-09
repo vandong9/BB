@@ -16,4 +16,10 @@ extension  UIView {
         topAnchor.constraint(equalTo: other.topAnchor).isActive = true
         bottomAnchor.constraint(equalTo: other.bottomAnchor).isActive = true
     }
+    
+    func makeBorder(radius: CGFloat, width: CGFloat, color: UIColor) {
+        layer.cornerRadius = radius
+        layer.borderWidth = width
+        layer.borderColor = color.cgColor
+    }
 }

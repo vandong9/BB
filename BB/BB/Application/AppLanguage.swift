@@ -9,6 +9,43 @@ class AppLanguage {
     static let shared = AppLanguage()
     
     private(set) var language: [String: String] = [:]
+    private var isLoadingVN = false
+    private var isLoadingEN = false
+
+    func getWordingForKey(_ key: String) -> String? {
+            var wd: String? = language[key]
+//            if wd == nil {
+//                loadBundleLanguageIfEmpty()
+//                wd = bundleLanguage[key]
+//            }
+            
+            return wd
+    }
+    
+    func updateCurrentLanguage(lang: BBLanguage) {
+        if lang == .vietnam, isLoadingVN { return }
+        if lang == .english, isLoadingEN { return }
+        
+        switch lang {
+        case .vietnam: isLoadingVN = true
+        case .english: isLoadingEN = true
+        }
+
+        let fileLanguageName = lang.fileLanguageName
+        if let jsonData = FileUtils.loadData(by: fileLanguageName) ?? FileUtils.loadDataOfBundleFile(fileLanguageName) {
+            if let dict = try? JSONSerialization.jsonObject(with: jsonData, options: .allowFragments) as? [String: String] {
+                language = dict
+            }
+            switch lang {
+            case .vietnam: isLoadingVN = false
+            case .english: isLoadingEN = false
+            }
+        }
+        
+        NotificationCenter.default.post(name: NSNotification.Name.notifyCurrentLanguageChange, object: nil)
+    }
+
+
 }
 
 enum BBLanguage: String {

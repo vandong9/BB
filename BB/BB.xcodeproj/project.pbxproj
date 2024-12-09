@@ -32,10 +32,33 @@
 		03A191A12D05E6AA001F6427 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A191A02D05E6AA001F6427 /* UserSettings.swift */; };
 		03A191A32D05E9FE001F6427 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A191A22D05E9FE001F6427 /* AppTheme.swift */; };
 		03A191A52D05EE50001F6427 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A191A42D05EE50001F6427 /* UIColor+Extension.swift */; };
-		03A191A72D05F299001F6427 /* VIBInputText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A191A62D05F299001F6427 /* VIBInputText.swift */; };
-		03A191A92D05F2A6001F6427 /* VIBHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A191A82D05F2A6001F6427 /* VIBHeaderView.swift */; };
+		03A191A72D05F299001F6427 /* BBInputText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A191A62D05F299001F6427 /* BBInputText.swift */; };
+		03A191A92D05F2A6001F6427 /* BBHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A191A82D05F2A6001F6427 /* BBHeaderView.swift */; };
 		03A191AB2D05F3BA001F6427 /* AppUIConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A191AA2D05F3BA001F6427 /* AppUIConstant.swift */; };
 		03A191AD2D05F5AA001F6427 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A191AC2D05F5AA001F6427 /* String+Extension.swift */; };
+		03EE4F1A2D07345400ECF86D /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EE4F192D07345400ECF86D /* UILabel+Extension.swift */; };
+		03EE4F1C2D0739F500ECF86D /* FileUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EE4F1B2D0739F400ECF86D /* FileUtils.swift */; };
+		03EE4F1E2D073E6300ECF86D /* DispatchQueue+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EE4F1D2D073E6300ECF86D /* DispatchQueue+Extensions.swift */; };
+		03EE4F2F2D07405500ECF86D /* Inter-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03EE4F202D07405500ECF86D /* Inter-Black.ttf */; };
+		03EE4F302D07405500ECF86D /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03EE4F212D07405500ECF86D /* Inter-Bold.ttf */; };
+		03EE4F312D07405500ECF86D /* Inter-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03EE4F222D07405500ECF86D /* Inter-ExtraBold.ttf */; };
+		03EE4F322D07405500ECF86D /* Inter-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03EE4F232D07405500ECF86D /* Inter-ExtraLight.ttf */; };
+		03EE4F332D07405500ECF86D /* Inter-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03EE4F242D07405500ECF86D /* Inter-Light.ttf */; };
+		03EE4F342D07405500ECF86D /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03EE4F252D07405500ECF86D /* Inter-Medium.ttf */; };
+		03EE4F352D07405500ECF86D /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03EE4F262D07405500ECF86D /* Inter-Regular.ttf */; };
+		03EE4F362D07405500ECF86D /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03EE4F272D07405500ECF86D /* Inter-SemiBold.ttf */; };
+		03EE4F372D07405500ECF86D /* Inter-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03EE4F282D07405500ECF86D /* Inter-Thin.ttf */; };
+		03EE4F382D07405500ECF86D /* Inter-VariableFont_slnt,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03EE4F2A2D07405500ECF86D /* Inter-VariableFont_slnt,wght.ttf */; };
+		03EE4F392D07405500ECF86D /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 03EE4F2B2D07405500ECF86D /* OFL.txt */; };
+		03EE4F3A2D07405500ECF86D /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 03EE4F2C2D07405500ECF86D /* README.txt */; };
+		03EE4F3C2D07477400ECF86D /* BBButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EE4F3B2D07477400ECF86D /* BBButton.swift */; };
+		03EE4F412D075DF400ECF86D /* RegisterInputInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EE4F3F2D075DF400ECF86D /* RegisterInputInfoVC.swift */; };
+		03EE4F422D075DF400ECF86D /* RegisterInputInfoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03EE4F402D075DF400ECF86D /* RegisterInputInfoVC.xib */; };
+		03EE4F462D07702300ECF86D /* RegisterInputPinVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EE4F442D07702300ECF86D /* RegisterInputPinVC.swift */; };
+		03EE4F472D07702300ECF86D /* RegisterInputPinVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03EE4F452D07702300ECF86D /* RegisterInputPinVC.xib */; };
+		03EE4F492D07704600ECF86D /* BBPinCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EE4F482D07704600ECF86D /* BBPinCellView.swift */; };
+		03EE4F4B2D0770B200ECF86D /* BaseLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EE4F4A2D0770B200ECF86D /* BaseLabel.swift */; };
+		03EE4F4D2D07711C00ECF86D /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EE4F4C2D07711C00ECF86D /* UIStackView+Extension.swift */; };
 		7C120FEB8B8D15DBCF63802C /* Pods_BB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0F59D4ACCF90DD7A53A0EAC /* Pods_BB.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,10 +90,33 @@
 		03A191A02D05E6AA001F6427 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		03A191A22D05E9FE001F6427 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
 		03A191A42D05EE50001F6427 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
-		03A191A62D05F299001F6427 /* VIBInputText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VIBInputText.swift; sourceTree = "<group>"; };
-		03A191A82D05F2A6001F6427 /* VIBHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VIBHeaderView.swift; sourceTree = "<group>"; };
+		03A191A62D05F299001F6427 /* BBInputText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBInputText.swift; sourceTree = "<group>"; };
+		03A191A82D05F2A6001F6427 /* BBHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBHeaderView.swift; sourceTree = "<group>"; };
 		03A191AA2D05F3BA001F6427 /* AppUIConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUIConstant.swift; sourceTree = "<group>"; };
 		03A191AC2D05F5AA001F6427 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		03EE4F192D07345400ECF86D /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		03EE4F1B2D0739F400ECF86D /* FileUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtils.swift; sourceTree = "<group>"; };
+		03EE4F1D2D073E6300ECF86D /* DispatchQueue+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Extensions.swift"; sourceTree = "<group>"; };
+		03EE4F202D07405500ECF86D /* Inter-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Black.ttf"; sourceTree = "<group>"; };
+		03EE4F212D07405500ECF86D /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
+		03EE4F222D07405500ECF86D /* Inter-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraBold.ttf"; sourceTree = "<group>"; };
+		03EE4F232D07405500ECF86D /* Inter-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraLight.ttf"; sourceTree = "<group>"; };
+		03EE4F242D07405500ECF86D /* Inter-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Light.ttf"; sourceTree = "<group>"; };
+		03EE4F252D07405500ECF86D /* Inter-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Medium.ttf"; sourceTree = "<group>"; };
+		03EE4F262D07405500ECF86D /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
+		03EE4F272D07405500ECF86D /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.ttf"; sourceTree = "<group>"; };
+		03EE4F282D07405500ECF86D /* Inter-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Thin.ttf"; sourceTree = "<group>"; };
+		03EE4F2A2D07405500ECF86D /* Inter-VariableFont_slnt,wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-VariableFont_slnt,wght.ttf"; sourceTree = "<group>"; };
+		03EE4F2B2D07405500ECF86D /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		03EE4F2C2D07405500ECF86D /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		03EE4F3B2D07477400ECF86D /* BBButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBButton.swift; sourceTree = "<group>"; };
+		03EE4F3F2D075DF400ECF86D /* RegisterInputInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInputInfoVC.swift; sourceTree = "<group>"; };
+		03EE4F402D075DF400ECF86D /* RegisterInputInfoVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterInputInfoVC.xib; sourceTree = "<group>"; };
+		03EE4F442D07702300ECF86D /* RegisterInputPinVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInputPinVC.swift; sourceTree = "<group>"; };
+		03EE4F452D07702300ECF86D /* RegisterInputPinVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterInputPinVC.xib; sourceTree = "<group>"; };
+		03EE4F482D07704600ECF86D /* BBPinCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBPinCellView.swift; sourceTree = "<group>"; };
+		03EE4F4A2D0770B200ECF86D /* BaseLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseLabel.swift; sourceTree = "<group>"; };
+		03EE4F4C2D07711C00ECF86D /* UIStackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
 		6A34FF3F9EDEC0722436D2C0 /* Pods-BB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BB.release.xcconfig"; path = "Target Support Files/Pods-BB/Pods-BB.release.xcconfig"; sourceTree = "<group>"; };
 		8A1F0BC1C0C901BA89DB8388 /* Pods-BB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BB.debug.xcconfig"; path = "Target Support Files/Pods-BB/Pods-BB.debug.xcconfig"; sourceTree = "<group>"; };
 		A0F59D4ACCF90DD7A53A0EAC /* Pods_BB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,6 +161,7 @@
 				03A1917B2D04E75C001F6427 /* Modules */,
 				03A191732D04E026001F6427 /* Utilities */,
 				032713B92D04A66700444DC0 /* ViewController.swift */,
+				03EE4F1F2D07404400ECF86D /* Resource */,
 				032713BB2D04A66700444DC0 /* Main.storyboard */,
 				032713BE2D04A66900444DC0 /* Assets.xcassets */,
 				032713C02D04A66900444DC0 /* LaunchScreen.storyboard */,
@@ -140,6 +187,9 @@
 				03A191792D04E24F001F6427 /* UIView+Extension.swift */,
 				03A191A42D05EE50001F6427 /* UIColor+Extension.swift */,
 				03A191AC2D05F5AA001F6427 /* String+Extension.swift */,
+				03EE4F192D07345400ECF86D /* UILabel+Extension.swift */,
+				03EE4F1D2D073E6300ECF86D /* DispatchQueue+Extensions.swift */,
+				03EE4F4C2D07711C00ECF86D /* UIStackView+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -183,23 +233,17 @@
 		03A1917F2D04E9AB001F6427 /* Register */ = {
 			isa = PBXGroup;
 			children = (
-				03A191832D04E9EA001F6427 /* RegisterNavigator */,
-			);
-			path = Register;
-			sourceTree = "<group>";
-		};
-		03A191832D04E9EA001F6427 /* RegisterNavigator */ = {
-			isa = PBXGroup;
-			children = (
+				03EE4F3D2D075D4C00ECF86D /* ViewControllers */,
 				03A191842D04EA1B001F6427 /* RegisterNavigator.swift */,
 			);
-			path = RegisterNavigator;
+			path = Register;
 			sourceTree = "<group>";
 		};
 		03A191862D04EA67001F6427 /* Base */ = {
 			isa = PBXGroup;
 			children = (
 				03A191882D04EAA9001F6427 /* BaseVC.swift */,
+				03EE4F4A2D0770B200ECF86D /* BaseLabel.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -242,6 +286,7 @@
 			children = (
 				03A191932D05D27F001F6427 /* UserSession.swift */,
 				03A1919A2D05E424001F6427 /* Utils.swift */,
+				03EE4F1B2D0739F400ECF86D /* FileUtils.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -249,10 +294,83 @@
 		03A191952D05D984001F6427 /* CommonViews */ = {
 			isa = PBXGroup;
 			children = (
-				03A191A82D05F2A6001F6427 /* VIBHeaderView.swift */,
-				03A191A62D05F299001F6427 /* VIBInputText.swift */,
+				03A191A82D05F2A6001F6427 /* BBHeaderView.swift */,
+				03A191A62D05F299001F6427 /* BBInputText.swift */,
+				03EE4F3B2D07477400ECF86D /* BBButton.swift */,
+				03EE4F482D07704600ECF86D /* BBPinCellView.swift */,
 			);
 			path = CommonViews;
+			sourceTree = "<group>";
+		};
+		03EE4F1F2D07404400ECF86D /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				03EE4F2E2D07405500ECF86D /* Fonts */,
+			);
+			name = Resource;
+			path = Resource/Resource;
+			sourceTree = "<group>";
+		};
+		03EE4F292D07405500ECF86D /* static */ = {
+			isa = PBXGroup;
+			children = (
+				03EE4F202D07405500ECF86D /* Inter-Black.ttf */,
+				03EE4F212D07405500ECF86D /* Inter-Bold.ttf */,
+				03EE4F222D07405500ECF86D /* Inter-ExtraBold.ttf */,
+				03EE4F232D07405500ECF86D /* Inter-ExtraLight.ttf */,
+				03EE4F242D07405500ECF86D /* Inter-Light.ttf */,
+				03EE4F252D07405500ECF86D /* Inter-Medium.ttf */,
+				03EE4F262D07405500ECF86D /* Inter-Regular.ttf */,
+				03EE4F272D07405500ECF86D /* Inter-SemiBold.ttf */,
+				03EE4F282D07405500ECF86D /* Inter-Thin.ttf */,
+			);
+			path = static;
+			sourceTree = "<group>";
+		};
+		03EE4F2D2D07405500ECF86D /* Inter */ = {
+			isa = PBXGroup;
+			children = (
+				03EE4F292D07405500ECF86D /* static */,
+				03EE4F2A2D07405500ECF86D /* Inter-VariableFont_slnt,wght.ttf */,
+				03EE4F2B2D07405500ECF86D /* OFL.txt */,
+				03EE4F2C2D07405500ECF86D /* README.txt */,
+			);
+			path = Inter;
+			sourceTree = "<group>";
+		};
+		03EE4F2E2D07405500ECF86D /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				03EE4F2D2D07405500ECF86D /* Inter */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		03EE4F3D2D075D4C00ECF86D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				03EE4F432D07701200ECF86D /* InputPin */,
+				03EE4F3E2D075DD200ECF86D /* InputInfo */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		03EE4F3E2D075DD200ECF86D /* InputInfo */ = {
+			isa = PBXGroup;
+			children = (
+				03EE4F3F2D075DF400ECF86D /* RegisterInputInfoVC.swift */,
+				03EE4F402D075DF400ECF86D /* RegisterInputInfoVC.xib */,
+			);
+			path = InputInfo;
+			sourceTree = "<group>";
+		};
+		03EE4F432D07701200ECF86D /* InputPin */ = {
+			isa = PBXGroup;
+			children = (
+				03EE4F442D07702300ECF86D /* RegisterInputPinVC.swift */,
+				03EE4F452D07702300ECF86D /* RegisterInputPinVC.xib */,
+			);
+			path = InputPin;
 			sourceTree = "<group>";
 		};
 		C16774B999E6BE4BE8662545 /* Frameworks */ = {
@@ -332,10 +450,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03EE4F392D07405500ECF86D /* OFL.txt in Resources */,
+				03EE4F362D07405500ECF86D /* Inter-SemiBold.ttf in Resources */,
+				03EE4F302D07405500ECF86D /* Inter-Bold.ttf in Resources */,
+				03EE4F332D07405500ECF86D /* Inter-Light.ttf in Resources */,
 				032713BF2D04A66900444DC0 /* Assets.xcassets in Resources */,
 				032713C22D04A66900444DC0 /* Base in Resources */,
+				03EE4F3A2D07405500ECF86D /* README.txt in Resources */,
+				03EE4F422D075DF400ECF86D /* RegisterInputInfoVC.xib in Resources */,
+				03EE4F472D07702300ECF86D /* RegisterInputPinVC.xib in Resources */,
+				03EE4F322D07405500ECF86D /* Inter-ExtraLight.ttf in Resources */,
+				03EE4F312D07405500ECF86D /* Inter-ExtraBold.ttf in Resources */,
+				03EE4F2F2D07405500ECF86D /* Inter-Black.ttf in Resources */,
+				03EE4F382D07405500ECF86D /* Inter-VariableFont_slnt,wght.ttf in Resources */,
 				03A191902D05D131001F6427 /* LoginVC.xib in Resources */,
+				03EE4F352D07405500ECF86D /* Inter-Regular.ttf in Resources */,
+				03EE4F342D07405500ECF86D /* Inter-Medium.ttf in Resources */,
 				032713BD2D04A66700444DC0 /* Base in Resources */,
+				03EE4F372D07405500ECF86D /* Inter-Thin.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,30 +520,39 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03EE4F3C2D07477400ECF86D /* BBButton.swift in Sources */,
 				03A191A52D05EE50001F6427 /* UIColor+Extension.swift in Sources */,
 				03A191852D04EA1B001F6427 /* RegisterNavigator.swift in Sources */,
 				03A191892D04EAA9001F6427 /* BaseVC.swift in Sources */,
-				03A191A72D05F299001F6427 /* VIBInputText.swift in Sources */,
+				03A191A72D05F299001F6427 /* BBInputText.swift in Sources */,
 				03A191912D05D131001F6427 /* LoginVC.swift in Sources */,
 				03A191762D04E067001F6427 /* BaseBBExtension.swift in Sources */,
+				03EE4F4D2D07711C00ECF86D /* UIStackView+Extension.swift in Sources */,
 				03A191812D04E9C6001F6427 /* GuestNavigator.swift in Sources */,
 				03A191972D05DE15001F6427 /* AppLanguage.swift in Sources */,
 				03A191AD2D05F5AA001F6427 /* String+Extension.swift in Sources */,
+				03EE4F1E2D073E6300ECF86D /* DispatchQueue+Extensions.swift in Sources */,
+				03EE4F1C2D0739F500ECF86D /* FileUtils.swift in Sources */,
+				03EE4F412D075DF400ECF86D /* RegisterInputInfoVC.swift in Sources */,
 				03A191992D05E276001F6427 /* AppConstant.swift in Sources */,
 				03A1919B2D05E424001F6427 /* Utils.swift in Sources */,
 				03A191722D04D59E001F6427 /* RootViewController.swift in Sources */,
 				03A191A32D05E9FE001F6427 /* AppTheme.swift in Sources */,
+				03EE4F462D07702300ECF86D /* RegisterInputPinVC.swift in Sources */,
 				03A191A12D05E6AA001F6427 /* UserSettings.swift in Sources */,
+				03EE4F4B2D0770B200ECF86D /* BaseLabel.swift in Sources */,
 				03A1917A2D04E24F001F6427 /* UIView+Extension.swift in Sources */,
+				03EE4F492D07704600ECF86D /* BBPinCellView.swift in Sources */,
 				03A191702D04D2A4001F6427 /* Application.swift in Sources */,
 				03A191AB2D05F3BA001F6427 /* AppUIConstant.swift in Sources */,
 				032713BA2D04A66700444DC0 /* ViewController.swift in Sources */,
-				03A191A92D05F2A6001F6427 /* VIBHeaderView.swift in Sources */,
+				03A191A92D05F2A6001F6427 /* BBHeaderView.swift in Sources */,
 				03A191782D04E176001F6427 /* UIViewController+Extension.swift in Sources */,
 				03A1919D2D05E591001F6427 /* AppFont.swift in Sources */,
 				032713B62D04A66700444DC0 /* AppDelegate.swift in Sources */,
 				03A191942D05D27F001F6427 /* UserSession.swift in Sources */,
 				032713B82D04A66700444DC0 /* SceneDelegate.swift in Sources */,
+				03EE4F1A2D07345400ECF86D /* UILabel+Extension.swift in Sources */,
 				03A1919F2D05E65D001F6427 /* AppColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
