@@ -1,8 +1,6 @@
 //
-//  VIBHeaderView.swift
+//  BBHeaderView.swift
 //  MyVIB_2.0
-//
-//  Created by chinhND on 19/05/2021.
 //
 
 import Foundation
@@ -12,7 +10,7 @@ import UIKit
 /*
  Using Example:
  
- @IBOutlet weak var headerView: VIBHeaderView!
+ @IBOutlet weak var headerView: BBHeaderView!
  
  // set title
  headerView.title = ""
@@ -69,7 +67,7 @@ typealias TitleHeaderViewDidSelect = () -> (Void)
 typealias LeftButtonHeaderViewDidSelect = () -> (Void)
 typealias RightButtonHeaderViewDidSelect = () -> (Void)
 
-class VIBHeaderView: UIView {
+class BBHeaderView: UIView {
     // MARK: - Properties
     
     private var titleLabel: UILabel!
@@ -101,7 +99,7 @@ class VIBHeaderView: UIView {
         }
     }
     
-    @IBInspectable public var leftIcon: UIImage? = nil {
+    @IBInspectable public var leftIcon: UIImage? = UIImage(named: "cm_nav_back_ic") {
         didSet {
             if leftIcon != nil {
                 letfButton.setImage(leftIcon, for: .normal)
@@ -202,6 +200,7 @@ class VIBHeaderView: UIView {
     }
     
     private func setupView() {
+        backgroundColor = .clear
         // add left Image
         letfButton = UIButton()
         letfButton.isExclusiveTouch = true
