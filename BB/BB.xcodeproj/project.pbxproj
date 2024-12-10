@@ -42,6 +42,7 @@
 		03E881AC2D08AF8E00FF1239 /* RegisterCaptureCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E881A92D08AF8E00FF1239 /* RegisterCaptureCardVC.swift */; };
 		03E881B02D08B4F200FF1239 /* RegisterCardInfoCardVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03E881AF2D08B4F200FF1239 /* RegisterCardInfoCardVC.xib */; };
 		03E881B12D08B4F200FF1239 /* RegisterCardInfoCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E881AE2D08B4F200FF1239 /* RegisterCardInfoCardVC.swift */; };
+		03E881B42D08BB1000FF1239 /* BaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E881B32D08BB1000FF1239 /* BaseAPI.swift */; };
 		03EE4F1A2D07345400ECF86D /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EE4F192D07345400ECF86D /* UILabel+Extension.swift */; };
 		03EE4F1C2D0739F500ECF86D /* FileUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EE4F1B2D0739F400ECF86D /* FileUtils.swift */; };
 		03EE4F1E2D073E6300ECF86D /* DispatchQueue+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EE4F1D2D073E6300ECF86D /* DispatchQueue+Extensions.swift */; };
@@ -106,6 +107,7 @@
 		03E881AA2D08AF8E00FF1239 /* RegisterCaptureCardVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterCaptureCardVC.xib; sourceTree = "<group>"; };
 		03E881AE2D08B4F200FF1239 /* RegisterCardInfoCardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCardInfoCardVC.swift; sourceTree = "<group>"; };
 		03E881AF2D08B4F200FF1239 /* RegisterCardInfoCardVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterCardInfoCardVC.xib; sourceTree = "<group>"; };
+		03E881B32D08BB1000FF1239 /* BaseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAPI.swift; sourceTree = "<group>"; };
 		03EE4F192D07345400ECF86D /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		03EE4F1B2D0739F400ECF86D /* FileUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtils.swift; sourceTree = "<group>"; };
 		03EE4F1D2D073E6300ECF86D /* DispatchQueue+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Extensions.swift"; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 		03A191732D04E026001F6427 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				03E881B22D08BAE400FF1239 /* APIs */,
 				03A191922D05D26C001F6427 /* Manager */,
 				03A191742D04E03D001F6427 /* Extension */,
 			);
@@ -339,6 +342,14 @@
 				03E881AF2D08B4F200FF1239 /* RegisterCardInfoCardVC.xib */,
 			);
 			path = CardInfo;
+			sourceTree = "<group>";
+		};
+		03E881B22D08BAE400FF1239 /* APIs */ = {
+			isa = PBXGroup;
+			children = (
+				03E881B32D08BB1000FF1239 /* BaseAPI.swift */,
+			);
+			path = APIs;
 			sourceTree = "<group>";
 		};
 		03EE4F1F2D07404400ECF86D /* Resource */ = {
@@ -586,6 +597,7 @@
 				03A191A32D05E9FE001F6427 /* AppTheme.swift in Sources */,
 				03EE4F462D07702300ECF86D /* RegisterInputPinVC.swift in Sources */,
 				03A191A12D05E6AA001F6427 /* UserSettings.swift in Sources */,
+				03E881B42D08BB1000FF1239 /* BaseAPI.swift in Sources */,
 				03EE4F4B2D0770B200ECF86D /* BaseLabel.swift in Sources */,
 				03A1917A2D04E24F001F6427 /* UIView+Extension.swift in Sources */,
 				03EE4F492D07704600ECF86D /* BBPinCellView.swift in Sources */,

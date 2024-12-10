@@ -8,6 +8,7 @@
 import Foundation
 
 struct AppConstant {
+    static let kDatakey = "data"
     static let kLocalizedFromJson = true
     struct ConfigFileName {
         static let kLangVi = ""
