@@ -110,7 +110,7 @@ struct HttpResults {
     }
 }
 
-enum VIBApiStatus: Int {
+enum BBApiStatus: Int {
     case badRequest = 400
     case authMiss = 401
     case notFound = 404
@@ -118,7 +118,7 @@ enum VIBApiStatus: Int {
     case success = 200
 }
 
-enum VIBStatusCode: String {
+enum BBStatusCode: String {
     case success = "000000"
 }
 
