@@ -21,11 +21,19 @@ struct ErrorModel: Error {
     var extra: [String: Any] = [:]
     // Add more (Support Unity)
     var needGetWording: Bool = true
-    
+
     static func noDataError() -> ErrorModel {
         return ErrorModel(errorCode: "", errorTitle: "AppLocalize.cmUnknownErrorTitle.toLocalize()", errorMessage: "AppLocalize.cmUnknownErrorMsg.toLocalize()", isShowError: false, requestURL: "", extra: [:], needGetWording: false)
     }
-//    
+    
+    var wrapTitle: String {
+        return ""
+    }
+    
+    var wrapMessage: String {
+        return errorMessage ?? ""
+    }
+//
 //    static func wrongOtpError() -> ErrorModel {
 //        return ErrorModel(errorCode: "", errorTitle: "t_OTPKP10", errorMessage: "m_OTPKP10", isShowError: true, requestURL: "", extra: [:], needGetWording: true)
 //    }

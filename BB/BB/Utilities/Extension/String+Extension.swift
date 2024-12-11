@@ -202,5 +202,43 @@ extension String {
          let replaceString = prepareString.replacingOccurrences(of: "{$}", with: "%@")
          return String(format: replaceString, arguments: arguments)
      }
+     
+     public func getIconThemeName() -> String {
+         var iconName = self
+         for theme in BBTheme.allThemes {
+             if self.contains(theme.rawValue) {
+                 let suffixTheme = "_\(theme.rawValue)"
+                 iconName = self.replacingOccurrences(of: suffixTheme, with: "")
+             }
+         }
+         return "\(iconName)\(UserSettings.shared.theme.imageSuffix)"
+     }
+
+     public func getIconLangName() -> String {
+         var iconName = self
+         // Check exist Suffix
+         if self.contains(UserSettings.shared.language.suffix) {
+             let suffixLang = "\(UserSettings.shared.language.suffix)"
+             iconName = self.replacingOccurrences(of: suffixLang, with: "")
+         }
+         iconName = iconName + UserSettings.shared.language.suffix
+         return iconName
+     }
+
  }
 
+// MARK: - SIZE WITH FONT
+extension String {
+    func height(withConstrainedWidth width: CGFloat, font: UIFont) -> CGFloat {
+        let constraintRect = CGSize(width: width, height: .greatestFiniteMagnitude)
+        let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: font], context: nil)
+        return ceil(boundingBox.height)
+    }
+    
+    func width(withConstrainedHeight height: CGFloat, font: UIFont) -> CGFloat {
+        let constraintRect = CGSize(width: .greatestFiniteMagnitude, height: height)
+        let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: font], context: nil)
+        return ceil(boundingBox.width)
+    }
+
+}

@@ -8,5 +8,6 @@ target 'BB' do
   # Pods for BB
   pod 'SwiftyJSON', '5.0.1'
   pod 'SnapKit', '~> 5.0.0'
+  pod 'NVActivityIndicatorView/Extended', '5.1.1'
 
 end

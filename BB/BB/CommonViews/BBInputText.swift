@@ -1,6 +1,6 @@
 //
 //  BBInputText.swift
-//  MyVIB_2.0
+//  BB
 //
 
 import UIKit

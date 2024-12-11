@@ -1,6 +1,6 @@
 //
 //  BBHeaderView.swift
-//  MyVIB_2.0
+//  BB
 //
 
 import Foundation

@@ -13,6 +13,13 @@
 		032713BD2D04A66700444DC0 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 032713BC2D04A66700444DC0 /* Base */; };
 		032713BF2D04A66900444DC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 032713BE2D04A66900444DC0 /* Assets.xcassets */; };
 		032713C22D04A66900444DC0 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 032713C12D04A66900444DC0 /* Base */; };
+		0351150B2D09F09600B928BE /* BBLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0351150A2D09F09600B928BE /* BBLoading.swift */; };
+		0351150D2D09F62100B928BE /* LineInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0351150C2D09F62100B928BE /* LineInfoView.swift */; };
+		0351150F2D0A026100B928BE /* RegisterRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0351150E2D0A026100B928BE /* RegisterRepositoryImpl.swift */; };
+		035115112D0A067100B928BE /* BBAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035115102D0A067100B928BE /* BBAlertView.swift */; };
+		035115172D0A06DB00B928BE /* FFPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = 035115142D0A06DB00B928BE /* FFPopup.m */; };
+		0351151A2D0A11F900B928BE /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035115192D0A11F900B928BE /* BaseButton.swift */; };
+		0351151C2D0A151C00B928BE /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0351151B2D0A151C00B928BE /* UIImage+Extension.swift */; };
 		03A191702D04D2A4001F6427 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1916F2D04D2A4001F6427 /* Application.swift */; };
 		03A191722D04D59E001F6427 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A191712D04D59E001F6427 /* RootViewController.swift */; };
 		03A191762D04E067001F6427 /* BaseBBExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A191752D04E067001F6427 /* BaseBBExtension.swift */; };
@@ -78,6 +85,15 @@
 		032713BE2D04A66900444DC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		032713C12D04A66900444DC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		032713C32D04A66900444DC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0351150A2D09F09600B928BE /* BBLoading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBLoading.swift; sourceTree = "<group>"; };
+		0351150C2D09F62100B928BE /* LineInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineInfoView.swift; sourceTree = "<group>"; };
+		0351150E2D0A026100B928BE /* RegisterRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRepositoryImpl.swift; sourceTree = "<group>"; };
+		035115102D0A067100B928BE /* BBAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBAlertView.swift; sourceTree = "<group>"; };
+		035115132D0A06DB00B928BE /* FFPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFPopup.h; sourceTree = "<group>"; };
+		035115142D0A06DB00B928BE /* FFPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFPopup.m; sourceTree = "<group>"; };
+		035115182D0A0AC900B928BE /* BB-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BB-Bridging-Header.h"; sourceTree = "<group>"; };
+		035115192D0A11F900B928BE /* BaseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
+		0351151B2D0A151C00B928BE /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		03A1916F2D04D2A4001F6427 /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		03A191712D04D59E001F6427 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		03A191752D04E067001F6427 /* BaseBBExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseBBExtension.swift; sourceTree = "<group>"; };
@@ -175,6 +191,7 @@
 				03A1917B2D04E75C001F6427 /* Modules */,
 				03A191732D04E026001F6427 /* Utilities */,
 				032713B92D04A66700444DC0 /* ViewController.swift */,
+				035115122D0A06D000B928BE /* Libs */,
 				03EE4F1F2D07404400ECF86D /* Resource */,
 				032713BB2D04A66700444DC0 /* Main.storyboard */,
 				032713BE2D04A66900444DC0 /* Assets.xcassets */,
@@ -182,6 +199,31 @@
 				032713C32D04A66900444DC0 /* Info.plist */,
 			);
 			path = BB;
+			sourceTree = "<group>";
+		};
+		035115122D0A06D000B928BE /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				035115162D0A06DB00B928BE /* FFPopup */,
+			);
+			path = Libs;
+			sourceTree = "<group>";
+		};
+		035115152D0A06DB00B928BE /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				035115132D0A06DB00B928BE /* FFPopup.h */,
+				035115142D0A06DB00B928BE /* FFPopup.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		035115162D0A06DB00B928BE /* FFPopup */ = {
+			isa = PBXGroup;
+			children = (
+				035115152D0A06DB00B928BE /* Classes */,
+			);
+			path = FFPopup;
 			sourceTree = "<group>";
 		};
 		03A191732D04E026001F6427 /* Utilities */ = {
@@ -205,6 +247,7 @@
 				03EE4F192D07345400ECF86D /* UILabel+Extension.swift */,
 				03EE4F1D2D073E6300ECF86D /* DispatchQueue+Extensions.swift */,
 				03EE4F4C2D07711C00ECF86D /* UIStackView+Extension.swift */,
+				0351151B2D0A151C00B928BE /* UIImage+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -250,6 +293,7 @@
 			children = (
 				03EE4F3D2D075D4C00ECF86D /* ViewControllers */,
 				03A191842D04EA1B001F6427 /* RegisterNavigator.swift */,
+				0351150E2D0A026100B928BE /* RegisterRepositoryImpl.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -257,6 +301,7 @@
 		03A191862D04EA67001F6427 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				035115192D0A11F900B928BE /* BaseButton.swift */,
 				03A191882D04EAA9001F6427 /* BaseVC.swift */,
 				03EE4F4A2D0770B200ECF86D /* BaseLabel.swift */,
 			);
@@ -266,6 +311,7 @@
 		03A191872D04EA7C001F6427 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				035115182D0A0AC900B928BE /* BB-Bridging-Header.h */,
 				032713B52D04A66700444DC0 /* AppDelegate.swift */,
 				03A1916F2D04D2A4001F6427 /* Application.swift */,
 				03A191712D04D59E001F6427 /* RootViewController.swift */,
@@ -309,10 +355,12 @@
 		03A191952D05D984001F6427 /* CommonViews */ = {
 			isa = PBXGroup;
 			children = (
+				0351150A2D09F09600B928BE /* BBLoading.swift */,
 				03A191A82D05F2A6001F6427 /* BBHeaderView.swift */,
 				03A191A62D05F299001F6427 /* BBInputText.swift */,
 				03EE4F3B2D07477400ECF86D /* BBButton.swift */,
 				03EE4F482D07704600ECF86D /* BBPinCellView.swift */,
+				035115102D0A067100B928BE /* BBAlertView.swift */,
 			);
 			path = CommonViews;
 			sourceTree = "<group>";
@@ -340,6 +388,7 @@
 			children = (
 				03E881AE2D08B4F200FF1239 /* RegisterCardInfoCardVC.swift */,
 				03E881AF2D08B4F200FF1239 /* RegisterCardInfoCardVC.xib */,
+				0351150C2D09F62100B928BE /* LineInfoView.swift */,
 			);
 			path = CardInfo;
 			sourceTree = "<group>";
@@ -587,13 +636,19 @@
 				03A191812D04E9C6001F6427 /* GuestNavigator.swift in Sources */,
 				03A191972D05DE15001F6427 /* AppLanguage.swift in Sources */,
 				03E881B12D08B4F200FF1239 /* RegisterCardInfoCardVC.swift in Sources */,
+				035115112D0A067100B928BE /* BBAlertView.swift in Sources */,
+				0351151C2D0A151C00B928BE /* UIImage+Extension.swift in Sources */,
+				0351150F2D0A026100B928BE /* RegisterRepositoryImpl.swift in Sources */,
 				03A191AD2D05F5AA001F6427 /* String+Extension.swift in Sources */,
+				0351150D2D09F62100B928BE /* LineInfoView.swift in Sources */,
+				035115172D0A06DB00B928BE /* FFPopup.m in Sources */,
 				03EE4F1E2D073E6300ECF86D /* DispatchQueue+Extensions.swift in Sources */,
 				03EE4F1C2D0739F500ECF86D /* FileUtils.swift in Sources */,
 				03EE4F412D075DF400ECF86D /* RegisterInputInfoVC.swift in Sources */,
 				03A191992D05E276001F6427 /* AppConstant.swift in Sources */,
 				03A1919B2D05E424001F6427 /* Utils.swift in Sources */,
 				03A191722D04D59E001F6427 /* RootViewController.swift in Sources */,
+				0351150B2D09F09600B928BE /* BBLoading.swift in Sources */,
 				03A191A32D05E9FE001F6427 /* AppTheme.swift in Sources */,
 				03EE4F462D07702300ECF86D /* RegisterInputPinVC.swift in Sources */,
 				03A191A12D05E6AA001F6427 /* UserSettings.swift in Sources */,
@@ -609,6 +664,7 @@
 				03E881A72D08A7B500FF1239 /* RegisterScanOptionVC.swift in Sources */,
 				03A191782D04E176001F6427 /* UIViewController+Extension.swift in Sources */,
 				03A1919D2D05E591001F6427 /* AppFont.swift in Sources */,
+				0351151A2D0A11F900B928BE /* BaseButton.swift in Sources */,
 				032713B62D04A66700444DC0 /* AppDelegate.swift in Sources */,
 				03A191942D05D27F001F6427 /* UserSession.swift in Sources */,
 				032713B82D04A66700444DC0 /* SceneDelegate.swift in Sources */,
@@ -782,6 +838,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.vib.bb.BB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "BB/Application/BB-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -811,6 +868,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.vib.bb.BB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "BB/Application/BB-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

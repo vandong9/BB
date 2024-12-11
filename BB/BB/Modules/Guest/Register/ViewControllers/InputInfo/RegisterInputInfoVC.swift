@@ -8,7 +8,9 @@
 import UIKit
 
 class RegisterInputInfoVC: BaseVC {
-    
+    protocol Repository {
+        func checkInfo(infos: [String: String], completion: @escaping (ErrorModel?) -> Void)
+    }
     class Router {
         var register: (() -> Void)?
     }
@@ -26,17 +28,19 @@ class RegisterInputInfoVC: BaseVC {
     
     // Variable
     var router: Router!
+    var repository: Repository!
     
     // MARK: - LifeCycle
 
-    static func instance(router: Router) -> RegisterInputInfoVC {
+    static func instance(router: Router, repository: Repository = RegisterRepositoryImpl.instance) -> RegisterInputInfoVC {
         let vc = RegisterInputInfoVC()
         vc.router = router
+        vc.repository = repository
         return vc
     }
     
     override func viewDidLoad() {
-        assert(router != nil)
+        assert(router != nil && repository != nil)
         super.viewDidLoad()
         
         setupUI()
@@ -45,7 +49,17 @@ class RegisterInputInfoVC: BaseVC {
     // MARK: - Actions
     
     @objc func onRegisterButtonTouch() {
-        router.register?()
+        BBLoading.showLoading()
+        repository.checkInfo(infos: [:]) { [weak self] error in
+            BBLoading.hideLoading()
+            if let error = error  {
+                AppDelegate.shared.rootViewController.handleApiResponseError(errorModel: error)
+                return
+            }
+            
+            self?.router.register?()
+        }
+        
     }
 }
 

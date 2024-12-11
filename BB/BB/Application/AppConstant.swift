@@ -8,6 +8,8 @@
 import Foundation
 
 struct AppConstant {
+    static let kAlertInfo = "alert_info"
+    static let kAlertAutoDismissingInterval = 2000
     static let kDatakey = "data"
     static let kLocalizedFromJson = true
     struct ConfigFileName {

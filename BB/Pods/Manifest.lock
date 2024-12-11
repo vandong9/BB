@@ -1,20 +1,26 @@
 PODS:
+  - NVActivityIndicatorView/Base (5.1.1)
+  - NVActivityIndicatorView/Extended (5.1.1):
+    - NVActivityIndicatorView/Base
   - SnapKit (5.0.1)
   - SwiftyJSON (5.0.1)
 
 DEPENDENCIES:
+  - NVActivityIndicatorView/Extended (= 5.1.1)
   - SnapKit (~> 5.0.0)
   - SwiftyJSON (= 5.0.1)
 
 SPEC REPOS:
   trunk:
+    - NVActivityIndicatorView
     - SnapKit
     - SwiftyJSON
 
 SPEC CHECKSUMS:
+  NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: 5da29045d702773c91efddeb3384b1f89355a64d
+PODFILE CHECKSUM: c100f122f8e37e03616e5e3f748100f1d4a5acd8
 
 COCOAPODS: 1.15.2

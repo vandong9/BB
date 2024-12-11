@@ -1,6 +1,6 @@
 //
 //  VIBButton.swift
-//  MyVIB_2.0
+//  BB
 //
 //  Created by digital on 11/05/2021.
 //
@@ -44,7 +44,7 @@ enum ButtonViewStyle: Int {
      - let button = VIBButton(frame: CGRect)
  */
 
-class BBButton: UIButton {
+class BBButton: BaseButton {
     
     /*
      Set size for some attributes
