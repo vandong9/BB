@@ -25,6 +25,8 @@ class RegisterCaptureCardVC: BaseVC {
     @IBOutlet weak var scanCardButton: BBButton!
     @IBOutlet weak var captureFrameView: UIView!
     
+    lazy var cameraView: CameraView = CameraView()
+    
     // Variable
     var router: Router!
     var inputData: InputData!
@@ -43,11 +45,21 @@ class RegisterCaptureCardVC: BaseVC {
 
         setupUI()
         addControntAction()
+        view.addSubview(cameraView)
+        cameraView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        view.sendSubviewToBack(cameraView)
+        
+        cameraView.didCaptureImageCallback = { [weak self] image in
+            self?.router.onCaptureImage?(image)
+        }
     }
 
     // MARK: - Actions
     @objc func onCaptureTouchup() {
-        router.onCaptureImage?(UIImage())
+        cameraView.captureImage()
+//        router.onCaptureImage?(UIImage())
     }
 
 }

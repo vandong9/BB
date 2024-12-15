@@ -55,6 +55,7 @@
 		03E9E30E2D0EF64800DB1692 /* DeviceUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E9E30D2D0EF64800DB1692 /* DeviceUtils.swift */; };
 		03E9E3102D0EF79F00DB1692 /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E9E30F2D0EF79F00DB1692 /* UIDevice+Extension.swift */; };
 		03E9E3122D0EFC7700DB1692 /* UserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E9E3112D0EFC7700DB1692 /* UserAPI.swift */; };
+		03E9E3152D0F309500DB1692 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E9E3142D0F309500DB1692 /* CameraView.swift */; };
 		03EE4F1A2D07345400ECF86D /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EE4F192D07345400ECF86D /* UILabel+Extension.swift */; };
 		03EE4F1C2D0739F500ECF86D /* FileUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EE4F1B2D0739F400ECF86D /* FileUtils.swift */; };
 		03EE4F1E2D073E6300ECF86D /* DispatchQueue+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EE4F1D2D073E6300ECF86D /* DispatchQueue+Extensions.swift */; };
@@ -134,6 +135,7 @@
 		03E9E30D2D0EF64800DB1692 /* DeviceUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceUtils.swift; sourceTree = "<group>"; };
 		03E9E30F2D0EF79F00DB1692 /* UIDevice+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extension.swift"; sourceTree = "<group>"; };
 		03E9E3112D0EFC7700DB1692 /* UserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPI.swift; sourceTree = "<group>"; };
+		03E9E3142D0F309500DB1692 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		03EE4F192D07345400ECF86D /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		03EE4F1B2D0739F400ECF86D /* FileUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtils.swift; sourceTree = "<group>"; };
 		03EE4F1D2D073E6300ECF86D /* DispatchQueue+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Extensions.swift"; sourceTree = "<group>"; };
@@ -391,6 +393,7 @@
 		03E881A82D08AF6700FF1239 /* CaptureCard */ = {
 			isa = PBXGroup;
 			children = (
+				03E9E3132D0F308500DB1692 /* Views */,
 				03E881A92D08AF8E00FF1239 /* RegisterCaptureCardVC.swift */,
 				03E881AA2D08AF8E00FF1239 /* RegisterCaptureCardVC.xib */,
 			);
@@ -414,6 +417,14 @@
 				03E9E3112D0EFC7700DB1692 /* UserAPI.swift */,
 			);
 			path = APIs;
+			sourceTree = "<group>";
+		};
+		03E9E3132D0F308500DB1692 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				03E9E3142D0F309500DB1692 /* CameraView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		03EE4F1F2D07404400ECF86D /* Resource */ = {
@@ -652,6 +663,7 @@
 				03E9E30A2D0ECDA300DB1692 /* AppConfig.swift in Sources */,
 				03A191972D05DE15001F6427 /* AppLanguage.swift in Sources */,
 				03E881B12D08B4F200FF1239 /* RegisterCardInfoCardVC.swift in Sources */,
+				03E9E3152D0F309500DB1692 /* CameraView.swift in Sources */,
 				035115112D0A067100B928BE /* BBAlertView.swift in Sources */,
 				03E9E30E2D0EF64800DB1692 /* DeviceUtils.swift in Sources */,
 				0351151C2D0A151C00B928BE /* UIImage+Extension.swift in Sources */,
@@ -845,6 +857,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BB/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "BB requires access your camera to allow you to take photos";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -875,6 +888,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BB/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "BB requires access your camera to allow you to take photos";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
