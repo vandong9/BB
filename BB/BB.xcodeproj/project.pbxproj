@@ -50,6 +50,11 @@
 		03E881B02D08B4F200FF1239 /* RegisterCardInfoCardVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03E881AF2D08B4F200FF1239 /* RegisterCardInfoCardVC.xib */; };
 		03E881B12D08B4F200FF1239 /* RegisterCardInfoCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E881AE2D08B4F200FF1239 /* RegisterCardInfoCardVC.swift */; };
 		03E881B42D08BB1000FF1239 /* BaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E881B32D08BB1000FF1239 /* BaseAPI.swift */; };
+		03E9E30A2D0ECDA300DB1692 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E9E3092D0ECDA300DB1692 /* AppConfig.swift */; };
+		03E9E30C2D0ECECC00DB1692 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E9E30B2D0ECECC00DB1692 /* BaseModel.swift */; };
+		03E9E30E2D0EF64800DB1692 /* DeviceUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E9E30D2D0EF64800DB1692 /* DeviceUtils.swift */; };
+		03E9E3102D0EF79F00DB1692 /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E9E30F2D0EF79F00DB1692 /* UIDevice+Extension.swift */; };
+		03E9E3122D0EFC7700DB1692 /* UserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E9E3112D0EFC7700DB1692 /* UserAPI.swift */; };
 		03EE4F1A2D07345400ECF86D /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EE4F192D07345400ECF86D /* UILabel+Extension.swift */; };
 		03EE4F1C2D0739F500ECF86D /* FileUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EE4F1B2D0739F400ECF86D /* FileUtils.swift */; };
 		03EE4F1E2D073E6300ECF86D /* DispatchQueue+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EE4F1D2D073E6300ECF86D /* DispatchQueue+Extensions.swift */; };
@@ -124,6 +129,11 @@
 		03E881AE2D08B4F200FF1239 /* RegisterCardInfoCardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCardInfoCardVC.swift; sourceTree = "<group>"; };
 		03E881AF2D08B4F200FF1239 /* RegisterCardInfoCardVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterCardInfoCardVC.xib; sourceTree = "<group>"; };
 		03E881B32D08BB1000FF1239 /* BaseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAPI.swift; sourceTree = "<group>"; };
+		03E9E3092D0ECDA300DB1692 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		03E9E30B2D0ECECC00DB1692 /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
+		03E9E30D2D0EF64800DB1692 /* DeviceUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceUtils.swift; sourceTree = "<group>"; };
+		03E9E30F2D0EF79F00DB1692 /* UIDevice+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extension.swift"; sourceTree = "<group>"; };
+		03E9E3112D0EFC7700DB1692 /* UserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPI.swift; sourceTree = "<group>"; };
 		03EE4F192D07345400ECF86D /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		03EE4F1B2D0739F400ECF86D /* FileUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtils.swift; sourceTree = "<group>"; };
 		03EE4F1D2D073E6300ECF86D /* DispatchQueue+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Extensions.swift"; sourceTree = "<group>"; };
@@ -248,6 +258,7 @@
 				03EE4F1D2D073E6300ECF86D /* DispatchQueue+Extensions.swift */,
 				03EE4F4C2D07711C00ECF86D /* UIStackView+Extension.swift */,
 				0351151B2D0A151C00B928BE /* UIImage+Extension.swift */,
+				03E9E30F2D0EF79F00DB1692 /* UIDevice+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -304,6 +315,7 @@
 				035115192D0A11F900B928BE /* BaseButton.swift */,
 				03A191882D04EAA9001F6427 /* BaseVC.swift */,
 				03EE4F4A2D0770B200ECF86D /* BaseLabel.swift */,
+				03E9E30B2D0ECECC00DB1692 /* BaseModel.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -323,6 +335,7 @@
 				03A1919E2D05E65D001F6427 /* AppColor.swift */,
 				03A191A02D05E6AA001F6427 /* UserSettings.swift */,
 				03A191A22D05E9FE001F6427 /* AppTheme.swift */,
+				03E9E3092D0ECDA300DB1692 /* AppConfig.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -348,6 +361,7 @@
 				03A191932D05D27F001F6427 /* UserSession.swift */,
 				03A1919A2D05E424001F6427 /* Utils.swift */,
 				03EE4F1B2D0739F400ECF86D /* FileUtils.swift */,
+				03E9E30D2D0EF64800DB1692 /* DeviceUtils.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -397,6 +411,7 @@
 			isa = PBXGroup;
 			children = (
 				03E881B32D08BB1000FF1239 /* BaseAPI.swift */,
+				03E9E3112D0EFC7700DB1692 /* UserAPI.swift */,
 			);
 			path = APIs;
 			sourceTree = "<group>";
@@ -634,17 +649,21 @@
 				03A191762D04E067001F6427 /* BaseBBExtension.swift in Sources */,
 				03EE4F4D2D07711C00ECF86D /* UIStackView+Extension.swift in Sources */,
 				03A191812D04E9C6001F6427 /* GuestNavigator.swift in Sources */,
+				03E9E30A2D0ECDA300DB1692 /* AppConfig.swift in Sources */,
 				03A191972D05DE15001F6427 /* AppLanguage.swift in Sources */,
 				03E881B12D08B4F200FF1239 /* RegisterCardInfoCardVC.swift in Sources */,
 				035115112D0A067100B928BE /* BBAlertView.swift in Sources */,
+				03E9E30E2D0EF64800DB1692 /* DeviceUtils.swift in Sources */,
 				0351151C2D0A151C00B928BE /* UIImage+Extension.swift in Sources */,
 				0351150F2D0A026100B928BE /* RegisterRepositoryImpl.swift in Sources */,
 				03A191AD2D05F5AA001F6427 /* String+Extension.swift in Sources */,
 				0351150D2D09F62100B928BE /* LineInfoView.swift in Sources */,
+				03E9E30C2D0ECECC00DB1692 /* BaseModel.swift in Sources */,
 				035115172D0A06DB00B928BE /* FFPopup.m in Sources */,
 				03EE4F1E2D073E6300ECF86D /* DispatchQueue+Extensions.swift in Sources */,
 				03EE4F1C2D0739F500ECF86D /* FileUtils.swift in Sources */,
 				03EE4F412D075DF400ECF86D /* RegisterInputInfoVC.swift in Sources */,
+				03E9E3122D0EFC7700DB1692 /* UserAPI.swift in Sources */,
 				03A191992D05E276001F6427 /* AppConstant.swift in Sources */,
 				03A1919B2D05E424001F6427 /* Utils.swift in Sources */,
 				03A191722D04D59E001F6427 /* RootViewController.swift in Sources */,
@@ -658,6 +677,7 @@
 				03EE4F492D07704600ECF86D /* BBPinCellView.swift in Sources */,
 				03A191702D04D2A4001F6427 /* Application.swift in Sources */,
 				03A191AB2D05F3BA001F6427 /* AppUIConstant.swift in Sources */,
+				03E9E3102D0EF79F00DB1692 /* UIDevice+Extension.swift in Sources */,
 				032713BA2D04A66700444DC0 /* ViewController.swift in Sources */,
 				03E881AC2D08AF8E00FF1239 /* RegisterCaptureCardVC.swift in Sources */,
 				03A191A92D05F2A6001F6427 /* BBHeaderView.swift in Sources */,

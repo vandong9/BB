@@ -7,10 +7,12 @@ import UIKit
 
 class RegisterNavigator {
     var nav: UINavigationController
+    var startVC: UIViewController?
     
     init(nav: UINavigationController) {
         self.nav = nav
         nav.isNavigationBarHidden = true
+        startVC = nav.topViewController
     }
 }
 
@@ -25,6 +27,11 @@ extension RegisterNavigator {
 extension RegisterNavigator {
     func pushVC(_ vc: UIViewController) {
         nav.pushViewController(vc, animated: true)
+    }
+    
+    func popOutFlow() {
+        guard let startVC = startVC else { return }
+        nav.popToViewController(startVC, animated: true)
     }
     
     func showInputInfo() {
@@ -75,7 +82,11 @@ extension RegisterNavigator {
     }
 
     func showCardInfo() {
-        let vc = RegisterCardInfoCardVC.instance()
+        let router = RegisterCardInfoCardVC.Router()
+        router.onSuccess = { [weak self] in
+            self?.popOutFlow()
+        }
+        let vc = RegisterCardInfoCardVC.instance(router: router)
         pushVC(vc)
     }
 }

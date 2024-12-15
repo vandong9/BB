@@ -186,3 +186,67 @@ extension JSON {
         return self.exists() && !self.isNull
     }
 }
+
+class IAPIRequest {
+    let BaseURL = AppConfigs.shared.rootUrl//: String = "https://dzgo5h8a1025l.cloudfront.net/"
+
+    func excuteRequest(_ api: IAPIModel, isAutoLoading: Bool = false, isAutoHandleError: Bool = false, completion: @escaping (HttpResults) -> Void) {
+        excuteRequest(api, isAutoLoading: isAutoLoading, isAutoHandleError: isAutoHandleError, tranformType: DefaultTranForm.self) { result in
+            completion(result)
+        }
+    }
+
+    func excuteRequest<T, I: ITransform>(_ api: IAPIModel, isAutoLoading: Bool = false, isAutoHandleError: Bool = false, tranformType: I.Type, completion: @escaping (T) -> Void) where I.T == T {
+        if isAutoLoading {
+            BBLoading.showLoading()
+        }
+
+        self.sendRequest(toURL: api.url, bodyParam: api.params, urlQueryParam: api.query, useMethod: api.method) { result in
+            let val = tranformType.tranform(result: result)
+            completion(val)
+            
+            if isAutoLoading {
+                BBLoading.hideLoading()
+            }
+            
+            if isAutoHandleError, let error = result.errorObj {
+                AppDelegate.shared.rootViewController.handleApiResponseError(errorModel: error)
+            }
+        }
+    }
+
+    func executeAutoDecodeRequest(url: String, method: HttpMethod, queryParams: [String: String] = [:], params: [String: Any] = [:], isAutoLoading: Bool = false, isAutoHandleError: Bool = false, completion: @escaping (HttpResults) -> Void) {
+        executeAutoDecodeRequest(url: url, method: method, queryParams: queryParams, params: params, tranformType: DefaultTranForm.self) { result in
+            completion(result)
+        }
+    }
+    func executeAutoDecodeRequest<T, I: ITransform>(url: String, method: HttpMethod, queryParams: [String: String] = [:], params: [String: Any] = [:], isAutoLoading: Bool = false, isAutoHandleError: Bool = false, tranformType: I.Type, completion: @escaping (T) -> Void) where I.T == T {
+        if isAutoLoading {
+            BBLoading.showLoading()
+        }
+        
+        self.sendRequest(toURL: url, bodyParam: params, urlQueryParam: queryParams, useMethod: method) { result in
+            let val = tranformType.tranform(result: result)
+            completion(val)
+            
+            if isAutoLoading {
+                BBLoading.hideLoading()
+            }
+            
+            if isAutoHandleError, let error = result.errorObj {
+                AppDelegate.shared.rootViewController.handleApiResponseError(errorModel: error)
+            }
+        }
+    }
+    
+    private func sendRequest(toURL url: String, bodyParam params: [String : Any]?, urlQueryParam urlParams: [String : Any]?, useMethod httpMethod: HttpMethod, _ isEnableEncodingVal: Bool = true, completion: @escaping (_ result: HttpResults) -> Void) {
+//        if NetworkMonitor.shared.isReachable && UserSettings.shared.lostConnectInfo.isNotEmpty {
+//            let infos = UserSettings.shared.lostConnectInfo.components(separatedBy: AppConstant.kSeparateDataApi)
+//            if infos.count > 1 {
+//                let propeties = [LogActionMonitorParamName.apiName.rawValue: infos.first!, LogActionMonitorParamName.timeRes.rawValue: infos[1]]
+//                LogActionUtils.logCallbackEvent(feature: .apiError, actionName: LogActionMonitorControlValue.callApiLostConnect.rawValue, properties: propeties)
+//            }
+//            UserSettings.shared.removeLostConnectInfo()
+//        }
+    }
+}

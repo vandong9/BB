@@ -49,6 +49,8 @@ class RegisterInputInfoVC: BaseVC {
     // MARK: - Actions
     
     @objc func onRegisterButtonTouch() {
+        guard isValidateInfo() else { return }
+        
         BBLoading.showLoading()
         repository.checkInfo(infos: [:]) { [weak self] error in
             BBLoading.hideLoading()
@@ -80,4 +82,9 @@ private extension RegisterInputInfoVC {
         registerButton.setTitle("Đăng ký".localized(), for: .normal)
         registerButton.addTarget(self, action: #selector(onRegisterButtonTouch), for: .touchUpInside)
     }
+    
+    private func isValidateInfo() -> Bool {
+        return true
+    }
+
 }

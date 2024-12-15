@@ -6,6 +6,10 @@
 import UIKit
 
 class RegisterInputPinVC: BaseVC {
+    protocol Repository {
+        func verifyPin(infos: [String: String], completion: @escaping (ErrorModel?) -> Void)
+    }
+
     class Router {
         var onConfirmSuccess: (() -> Void)?
     }
@@ -20,11 +24,13 @@ class RegisterInputPinVC: BaseVC {
     
     // Variable
     var router: Router!
+    var repository: Repository!
     
     // MARK: - LifeCycle
-    static func instance(router: Router) -> RegisterInputPinVC {
+    static func instance(router: Router, repository: Repository = RegisterRepositoryImpl.instance) -> RegisterInputPinVC {
         let vc = RegisterInputPinVC()
         vc.router = router
+        vc.repository = repository
         return vc
     }
     override func viewDidLoad() {
@@ -60,8 +66,26 @@ extension RegisterInputPinVC {
         pinView.itemWidth = 63
     }
     
+    private func isValidateInfo() -> Bool {
+        return true
+    }
+    
     func addAction() {
+        guard isValidateInfo() else { return }
+        
         pinView.completeInput = { [weak self] pin in
+            self?.validate(pin: pin)
+        }
+    }
+    
+    func validate(pin: String) {
+        BBLoading.showLoading()
+        repository.verifyPin(infos: [:]) { [weak self] error in
+            BBLoading.hideLoading()
+            if let error = error {
+                return
+            }
+            
             self?.router.onConfirmSuccess?()
         }
     }
