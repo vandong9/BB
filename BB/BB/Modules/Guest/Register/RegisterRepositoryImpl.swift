@@ -6,20 +6,20 @@
 import Foundation
 
 class RegisterRepositoryImpl {
-    var requester = IAPIRequest()
+    var requester = AppRequester()
     
     static let instance: RegisterRepositoryImpl = RegisterRepositoryImpl()
 }
 
 extension RegisterRepositoryImpl: RegisterInputInfoVC.Repository {
     func checkInfo(infos: [String: String], completion: @escaping (ErrorModel?) -> Void) {
-//        requester.excuteRequest(UserAPI.verifyUserInfo.api) { result in
-//            
-//        }
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            completion(nil)
+        requester.excuteRequest(UserAPI.verifyUserInfo(info: infos).api) { result in
+            completion(result.errorObj)
         }
+        
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+//            completion(nil)
+//        }
     }
 }
 

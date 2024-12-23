@@ -3,4 +3,100 @@
    uuid = "D3639E85-21B0-450D-B1DB-122C0530AAAF"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9222F396-01AE-4F68-B1AB-C15D8E21E2D9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BB/Utilities/APIs/BaseAPI.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "206"
+            endingLineNumber = "206"
+            landmarkName = "excuteRequest(_:isAutoLoading:isAutoHandleError:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B6A3B554-971D-477A-9DDC-DB949C8A8AE7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BB/Utilities/APIs/BaseAPI.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "287"
+            endingLineNumber = "287"
+            landmarkName = "sendRequest(toURL:bodyParam:urlQueryParam:useMethod:_:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B6A3B554-971D-477A-9DDC-DB949C8A8AE7 - f51c7a23cd53a0c2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BB.AppRequester.sendRequest(toURL: Swift.String, bodyParam: Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;, urlQueryParam: Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;, useMethod: BB.HttpMethod, _: Swift.Bool, completion: (BB.HttpResults) -&gt; ()) -&gt; ()"
+                  moduleName = "BB"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/DATA/Projects/BB/source/BB/BB/BB/Utilities/APIs/BaseAPI.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "287"
+                  endingLineNumber = "287">
+               </Location>
+               <Location
+                  uuid = "B6A3B554-971D-477A-9DDC-DB949C8A8AE7 - 860ca3e321e84e3d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Alamofire.DataResponse&lt;Any, Alamofire.AFError&gt;) -&gt; () in BB.AppRequester.sendRequest(toURL: Swift.String, bodyParam: Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;, urlQueryParam: Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;, useMethod: BB.HttpMethod, _: Swift.Bool, completion: (BB.HttpResults) -&gt; ()) -&gt; ()"
+                  moduleName = "BB"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/DATA/Projects/BB/source/BB/BB/BB/Utilities/APIs/BaseAPI.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "288"
+                  endingLineNumber = "288">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "13B58B9B-BDC2-4D2C-A1F1-3870AF9B5CB9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BB/Utilities/APIs/BaseAPI.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "288"
+            endingLineNumber = "288"
+            landmarkName = "sendRequest(toURL:bodyParam:urlQueryParam:useMethod:_:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E22B16B8-AD24-48B6-9D66-9228DF5BC51D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BB/Utilities/APIs/BaseAPI.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "268"
+            endingLineNumber = "268"
+            landmarkName = "sendRequest(toURL:bodyParam:urlQueryParam:useMethod:_:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

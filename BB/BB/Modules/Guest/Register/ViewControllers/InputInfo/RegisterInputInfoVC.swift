@@ -12,7 +12,7 @@ class RegisterInputInfoVC: BaseVC {
         func checkInfo(infos: [String: String], completion: @escaping (ErrorModel?) -> Void)
     }
     class Router {
-        var register: (() -> Void)?
+        var register: ((_ email: String, _ password: String) -> Void)?
     }
     // MARK: - Properties
     // Layout
@@ -25,7 +25,6 @@ class RegisterInputInfoVC: BaseVC {
     @IBOutlet weak var repasswordInputText: BBInputText!
     @IBOutlet weak var registerButton: BBButton!
 
-    
     // Variable
     var router: Router!
     var repository: Repository!
@@ -52,14 +51,16 @@ class RegisterInputInfoVC: BaseVC {
         guard isValidateInfo() else { return }
         
         BBLoading.showLoading()
-        repository.checkInfo(infos: [:]) { [weak self] error in
+        repository.checkInfo(infos: ["name": "name", "email": emailInputText.text ?? "", "password": passwordInputText.text ?? ""]) { [weak self] error in
             BBLoading.hideLoading()
             if let error = error  {
                 AppDelegate.shared.rootViewController.handleApiResponseError(errorModel: error)
                 return
             }
             
-            self?.router.register?()
+            guard let self = self else { return }
+            
+            self.router.register?(emailInputText.text ?? "", passwordInputText.text ?? "")
         }
         
     }
@@ -79,12 +80,46 @@ private extension RegisterInputInfoVC {
         passwordLabel.setFontColor(AppFont.baseSubheadlineRegular, color: AppColor.baseGrey900)
         passwordLabel.text = "Xác nhận mật khẩu".localized()
 
+        emailInputText.delegate = self
+        passwordInputText.delegate = self
+        repasswordInputText.delegate = self
+        
         registerButton.setTitle("Đăng ký".localized(), for: .normal)
         registerButton.addTarget(self, action: #selector(onRegisterButtonTouch), for: .touchUpInside)
+        
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTapOnView)))
     }
     
     private func isValidateInfo() -> Bool {
+        guard let email = emailInputText.text,
+              let pass = passwordInputText.text,
+              let repass = repasswordInputText.text
+        else {
+            BBAlertView.show(title: "Missing info".localized(), message: "Please input all info")
+            return false
+        }
+        
+        if email.isEmpty || pass.isEmpty || repass.isEmpty {
+            BBAlertView.show(title: "Missing info".localized(), message: "Please input all info")
+            return false
+        }
+        
+        if pass !=  repass {
+            BBAlertView.show(title: "Not match".localized(), message: "Password and Re-Password are not match")
+            return false
+        }
+        
         return true
     }
 
+    @objc private func handleTapOnView() {
+        view.endEditing(true)
+    }
+}
+
+extension RegisterInputInfoVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }

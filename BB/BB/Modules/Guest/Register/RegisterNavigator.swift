@@ -6,8 +6,15 @@
 import UIKit
 
 class RegisterNavigator {
+    struct RegisterData {
+        var email: String?
+        var password: String?
+        var name: String?
+    }
+    
     var nav: UINavigationController
     var startVC: UIViewController?
+    private var registerData = RegisterData()
     
     init(nav: UINavigationController) {
         self.nav = nav
@@ -36,7 +43,9 @@ extension RegisterNavigator {
     
     func showInputInfo() {
         let router = RegisterInputInfoVC.Router()
-        router.register = { [weak nav] in
+        router.register = { [weak nav] (email, password) in
+            self.registerData.email = email
+            self.registerData.password = password
             self.showInputPin()
         }
         let vc = RegisterInputInfoVC.instance(router: router)

@@ -7,6 +7,20 @@
 
 import Foundation
 import SwiftyJSON
+import Alamofire
+
+let root = "https://uatapi.b2b-vietnam.com"
+enum Endpoint {
+    case auth
+    case venues
+    
+    var path: String {
+        switch self {
+        case .auth: return "/auth"
+        case .venues: return "/auth"
+        }
+    }
+}
 
 protocol SwiftyJSONMappable {
     init?(json: JSON)
@@ -40,18 +54,15 @@ struct ErrorModel: Error {
 }
 
 struct HttpResults {
-    var requestId: String = ""
     var errorObj: ErrorModel?
     var json: JSON?
     
-    init(withError error: ErrorModel, requestId: String = "") {
+    init(withError error: ErrorModel) {
         self.errorObj = error
-        self.requestId = requestId
     }
     
-    init(withData jsonData: JSON, requestId: String = "") {
+    init(withData jsonData: JSON) {
         self.json = jsonData
-        self.requestId = requestId
     }
     
     var dataObject: JSON? {
@@ -239,7 +250,7 @@ class IAPIRequest {
         }
     }
     
-    private func sendRequest(toURL url: String, bodyParam params: [String : Any]?, urlQueryParam urlParams: [String : Any]?, useMethod httpMethod: HttpMethod, _ isEnableEncodingVal: Bool = true, completion: @escaping (_ result: HttpResults) -> Void) {
+    func sendRequest(toURL url: String, bodyParam params: [String : Any]?, urlQueryParam urlParams: [String : Any]?, useMethod httpMethod: HttpMethod, _ isEnableEncodingVal: Bool = true, completion: @escaping (_ result: HttpResults) -> Void) {
 //        if NetworkMonitor.shared.isReachable && UserSettings.shared.lostConnectInfo.isNotEmpty {
 //            let infos = UserSettings.shared.lostConnectInfo.components(separatedBy: AppConstant.kSeparateDataApi)
 //            if infos.count > 1 {
@@ -248,5 +259,40 @@ class IAPIRequest {
 //            }
 //            UserSettings.shared.removeLostConnectInfo()
 //        }
+    }
+}
+
+class AppRequester: IAPIRequest {
+    override func sendRequest(toURL url: String, bodyParam params: [String : Any]?, urlQueryParam urlParams: [String : Any]?, useMethod httpMethod: HttpMethod, _ isEnableEncodingVal: Bool = true, completion: @escaping (_ result: HttpResults) -> Void) {
+        
+        var method: HTTPMethod = .get
+        switch httpMethod {
+        case .get: method = HTTPMethod.get
+        case .post: method = HTTPMethod.post
+        case .put: method = HTTPMethod.put
+        case .patch: method = HTTPMethod.patch
+        case .delete: method = HTTPMethod.delete
+            
+        }
+        
+        let headers: HTTPHeaders = [
+
+//                    .authorization(username: "test@email.com", password: "testpassword"),
+                    .accept("application/json")
+                ]
+//        AF.request(url, method: method, parameters: params ?? [:]).responseJSON { (_, _, JSON, _) in
+//            print(JSON)
+//        }
+        
+        AF.request(url, parameters: params, encoding: JSONEncoding.prettyPrinted, headers: headers).responseJSON { response in
+                    debugPrint(response)
+            if let data = response.data, let json = try? JSON(rawValue: response) {
+                let resJson = JSON(data)
+                completion(HttpResults(withData: json))
+
+            } else {
+                completion(HttpResults(withError: ErrorModel()))
+            }
+        }
     }
 }

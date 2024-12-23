@@ -5,13 +5,14 @@
 
 import Foundation
 
+
 enum UserAPI {
-    case verifyUserInfo
+    case verifyUserInfo(info: [String: String])
     
     var api: BaseAPIModel {
         switch self {
-        case .verifyUserInfo:
-            return BaseAPIModel(url: "", method: .post, query: [:], params: [:])
+        case .verifyUserInfo(let info):
+            return BaseAPIModel(url: root +  Endpoint.auth.path + "/register", method: .post, query: [:], params: info)
         }
     }
 }
