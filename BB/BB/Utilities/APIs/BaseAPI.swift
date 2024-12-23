@@ -35,7 +35,7 @@ struct ErrorModel: Error {
     var extra: [String: Any] = [:]
     // Add more (Support Unity)
     var needGetWording: Bool = true
-
+    
     static func noDataError() -> ErrorModel {
         return ErrorModel(errorCode: "", errorTitle: "AppLocalize.cmUnknownErrorTitle.toLocalize()", errorMessage: "AppLocalize.cmUnknownErrorMsg.toLocalize()", isShowError: false, requestURL: "", extra: [:], needGetWording: false)
     }
@@ -47,10 +47,10 @@ struct ErrorModel: Error {
     var wrapMessage: String {
         return errorMessage ?? ""
     }
-//
-//    static func wrongOtpError() -> ErrorModel {
-//        return ErrorModel(errorCode: "", errorTitle: "t_OTPKP10", errorMessage: "m_OTPKP10", isShowError: true, requestURL: "", extra: [:], needGetWording: true)
-//    }
+    //
+    //    static func wrongOtpError() -> ErrorModel {
+    //        return ErrorModel(errorCode: "", errorTitle: "t_OTPKP10", errorMessage: "m_OTPKP10", isShowError: true, requestURL: "", extra: [:], needGetWording: true)
+    //    }
 }
 
 struct HttpResults {
@@ -90,7 +90,7 @@ struct HttpResults {
     func decodeObject<T: SwiftyJSONMappable>() -> (T?, ErrorModel?) {
         var instance: T?
         if let data = dataObject, !data.isNull {
-             instance =  T.init(json: data)
+            instance =  T.init(json: data)
         }
         if let error = errorObj {
             return (instance, error)
@@ -101,7 +101,7 @@ struct HttpResults {
             return (nil, ErrorModel.noDataError())
         }
     }
-
+    
     func resultDecodeObject<T: SwiftyJSONMappable>() -> Result<T, ErrorModel> {
         if let errorObj = errorObj {
             return .failure(errorObj)
@@ -146,7 +146,7 @@ protocol IAPIModel {
     var method: HttpMethod  {get set}
     var query: [String: String]  {get set}
     var params: [String: Any]  {get set}
-
+    
 }
 struct BaseAPIModel: IAPIModel {
     var url: String
@@ -200,18 +200,18 @@ extension JSON {
 
 class IAPIRequest {
     let BaseURL = AppConfigs.shared.rootUrl//: String = "https://dzgo5h8a1025l.cloudfront.net/"
-
+    
     func excuteRequest(_ api: IAPIModel, isAutoLoading: Bool = false, isAutoHandleError: Bool = false, completion: @escaping (HttpResults) -> Void) {
         excuteRequest(api, isAutoLoading: isAutoLoading, isAutoHandleError: isAutoHandleError, tranformType: DefaultTranForm.self) { result in
             completion(result)
         }
     }
-
+    
     func excuteRequest<T, I: ITransform>(_ api: IAPIModel, isAutoLoading: Bool = false, isAutoHandleError: Bool = false, tranformType: I.Type, completion: @escaping (T) -> Void) where I.T == T {
         if isAutoLoading {
             BBLoading.showLoading()
         }
-
+        
         self.sendRequest(toURL: api.url, bodyParam: api.params, urlQueryParam: api.query, useMethod: api.method) { result in
             let val = tranformType.tranform(result: result)
             completion(val)
@@ -225,7 +225,7 @@ class IAPIRequest {
             }
         }
     }
-
+    
     func executeAutoDecodeRequest(url: String, method: HttpMethod, queryParams: [String: String] = [:], params: [String: Any] = [:], isAutoLoading: Bool = false, isAutoHandleError: Bool = false, completion: @escaping (HttpResults) -> Void) {
         executeAutoDecodeRequest(url: url, method: method, queryParams: queryParams, params: params, tranformType: DefaultTranForm.self) { result in
             completion(result)
@@ -251,14 +251,14 @@ class IAPIRequest {
     }
     
     func sendRequest(toURL url: String, bodyParam params: [String : Any]?, urlQueryParam urlParams: [String : Any]?, useMethod httpMethod: HttpMethod, _ isEnableEncodingVal: Bool = true, completion: @escaping (_ result: HttpResults) -> Void) {
-//        if NetworkMonitor.shared.isReachable && UserSettings.shared.lostConnectInfo.isNotEmpty {
-//            let infos = UserSettings.shared.lostConnectInfo.components(separatedBy: AppConstant.kSeparateDataApi)
-//            if infos.count > 1 {
-//                let propeties = [LogActionMonitorParamName.apiName.rawValue: infos.first!, LogActionMonitorParamName.timeRes.rawValue: infos[1]]
-//                LogActionUtils.logCallbackEvent(feature: .apiError, actionName: LogActionMonitorControlValue.callApiLostConnect.rawValue, properties: propeties)
-//            }
-//            UserSettings.shared.removeLostConnectInfo()
-//        }
+        //        if NetworkMonitor.shared.isReachable && UserSettings.shared.lostConnectInfo.isNotEmpty {
+        //            let infos = UserSettings.shared.lostConnectInfo.components(separatedBy: AppConstant.kSeparateDataApi)
+        //            if infos.count > 1 {
+        //                let propeties = [LogActionMonitorParamName.apiName.rawValue: infos.first!, LogActionMonitorParamName.timeRes.rawValue: infos[1]]
+        //                LogActionUtils.logCallbackEvent(feature: .apiError, actionName: LogActionMonitorControlValue.callApiLostConnect.rawValue, properties: propeties)
+        //            }
+        //            UserSettings.shared.removeLostConnectInfo()
+        //        }
     }
 }
 
@@ -276,20 +276,35 @@ class AppRequester: IAPIRequest {
         }
         
         let headers: HTTPHeaders = [
-
-//                    .authorization(username: "test@email.com", password: "testpassword"),
-                    .accept("application/json")
-                ]
-//        AF.request(url, method: method, parameters: params ?? [:]).responseJSON { (_, _, JSON, _) in
-//            print(JSON)
-//        }
+            .accept("application/json")
+        ]
         
-        AF.request(url, parameters: params, encoding: JSONEncoding.prettyPrinted, headers: headers).responseJSON { response in
-                    debugPrint(response)
-            if let data = response.data, let json = try? JSON(rawValue: response) {
-                let resJson = JSON(data)
-                completion(HttpResults(withData: json))
+        AF.request(url, method: method, parameters: params, encoding: JSONEncoding.prettyPrinted, headers: headers).responseJSON { response in
+            debugPrint(response)
+            
+            if let error = response.error {
+                var errorModel = ErrorModel()
 
+                if error.responseCode == 500 {
+                    errorModel.errorMessage = "Server Error".localized()
+                }
+                else if error.responseCode == 404 {
+                    errorModel.errorMessage = "Api Not found".localized()
+                }
+                completion(HttpResults(withError: errorModel))
+                return
+            }
+            
+            if let data = response.data {
+                if let json = try? JSON(data) {
+                    completion(HttpResults(withData: json))
+                } else {
+                    let message = String(data: data, encoding: .utf8)
+                    var error = ErrorModel()
+                    error.errorMessage = message ?? ""
+                    completion(HttpResults(withError: error))
+                }
+                
             } else {
                 completion(HttpResults(withError: ErrorModel()))
             }
